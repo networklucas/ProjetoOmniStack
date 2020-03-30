@@ -1,0 +1,45 @@
+.new-incidents-container{
+    width: 100%; /* largura */
+    max-width: 1120px;/* largura maxima */
+    height: 100vh; /* altura.. faz com que a altura fica no centro */
+    margin: 0 auto; /* margin auto em 0 faz com que o conteudo fique sempre cetralizado no centro da tela*/
+
+    display:  flex; /* faz com que os itens fiquem alinhados lado/lado  */
+    align-items: center; /* verticalmente al centro */
+    justify-content: center; /* orizontalmente ao centro  */
+}
+.new-incidents-container .content {
+    width: 100%;
+    padding: 96px;
+    background: #f0f0f5;
+    box-shadow: 0 0 100px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.register-container .content section{
+    width: 100%;
+    max-width: 380px;
+}
+.register-container .content section h1{
+    margin: 64px 0 32px;
+    font-size:  32px;
+}
+.register-container .content section p {
+    font-size:  18px;
+    color: rgb(59, 56, 56);
+    line-height: 32px;
+}
+.new-incidents-container .content form{
+    width: 100%;
+    max-width: 450px;
+}
+
+.new-incidents-container .content form input{
+    margin-top: 8px;
+}
+.new-incidents-container .content form textarea{
+    margin-top: 8px;
+}

@@ -1,0 +1,30 @@
+
+/* o logon conteiner e a div que está por fara de tudo
+*/
+.logon-container{
+    width: 100%; /* largura */
+    max-width: 1120px;/* largura maxima */
+    height: 100vh; /* altura.. faz com que a altura fica no centro */
+    margin: 0 auto; /* margin auto em 0 faz com que o conteudo fique sempre cetralizado no centro da tela*/
+
+    display:  flex; /* faz com que os itens fiquem alinhados lado/lado  */
+    align-items: center; /* verticalmente al centro */
+    justify-content: space-between; /* orizontalmente ao centro  */
+
+}
+
+.logon-container section.form{ /* estilizando o formulario  */
+width: 100%;
+max-width: 350px;
+margin-right: 100px; /* distancia os objetos lado a lado */
+}
+
+.logon-container section.form form{
+    margin-top: 32px;
+}
+
+.logon-container section.form form h1 { /*  estilizando o h1 */
+    font-size: 32px;
+    margin-top:32px;
+}
+
