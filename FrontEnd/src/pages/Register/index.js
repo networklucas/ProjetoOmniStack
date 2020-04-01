@@ -15,7 +15,7 @@ import api from '../../services/api';
  const[city, setCity] = useState('');
  const[uf, setUf] = useState('');
 
- let history = useHistory;
+ const history = useHistory();
     async function handleRegister(e){
        e.preventDefault();
   

@@ -39,21 +39,28 @@ const connection = require ("../database/connection");
    return response.json({id});
 
   },
-  async delete (request, response){
-      const {id} = request.params;
-      const ong_id = request.headers.authorization;
+  async delete(request, response){
+    const { id } = request.params;
+    const ong_id = request.headers.authorization;
 
-      const incidents = await connection ('incidents')
-      .where('id', id)
-      .select('ong_id')
-      .first();
+    if(!id || !ong_id){
+        return response.status(401).json({ error: 'vazio' });
+    }
+    console.log(id);
+    console.log(ong_id);
+    const incident = await connection('incidents')
+    .where('id', id)
+    .select('ong_id')
+    .first();
 
-      if (incidents.ong_id != ong_id){
-          return response.status(401).json({error: 'Não Permitido'});
-       }
-       await connection('incidents').where('id', id).delete();
-       
-       return  response.status(204).send();
+    if(incident.ong_id != ong_id || !id || !ong_id){
+      return response.status(401).json({ error: 'Operation not permitted' });
+    }
+    
+    await connection('incidents').where('id',id).delete();
+    
+    return response.status(204).send();
+
   }
 
  };

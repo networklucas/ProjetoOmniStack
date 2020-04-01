@@ -1,11 +1,40 @@
-import React from "react";
+import React,{useState} from "react";
 import './styles.css';
 import logoImg from '../../assets/logo.svg';
 import {Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import{FiLogIn, FiArrowDownLeft} from 'react-icons/fi';
+import api from "../../services/api";
 
 
- export default function Newincident(){
+export default function Newincident(){
+
+const[titulo, setTitulo] = useState('');
+const[descripiton,setDescripiton] = useState('');
+const[value,setValue]= useState('');
+const history = useHistory();
+const ongId = localStorage.getItem('ongId');
+
+
+async function handleNewincident(e){
+    e.preventDefault();
+   
+    const data ={
+        titulo,
+        descripiton,
+        value,
+    };
+    try { 
+        console.log(data);
+        await api.post('incidents',data, { headers:{Authorization: ongId,}})
+       
+       history.push('/profile');
+        
+    } catch (error) {
+        alert('Erro O Cadastrar caso, tente novamente');
+    }
+}
+
      return (
         <div className="new-incidents-container">
             <div className="content">
@@ -20,10 +49,22 @@ import{FiLogIn, FiArrowDownLeft} from 'react-icons/fi';
               
             </section>
 
-            <form>
-                <input placeholder="Titulo do caso"/>
-                <textarea placeholder="Descrição"/>
-                <input placeholder="Valor em Reais"/>
+            <form onSubmit={handleNewincident} >
+                <input 
+                placeholder="Titulo do caso"
+                value={titulo}
+                onChange={e => setTitulo(e.target.value)}
+                />
+                <textarea 
+                placeholder="Descrição"
+                value={descripiton}
+                onChange={e => setDescripiton(e.target.value)}
+                />
+                <input 
+                placeholder="Valor em Reais"
+                value={value}
+                onChange={e => setValue(e.target.value)}
+                />
                 
                 <button className="button" type="submit" >
                  <FiLogIn size={16} color="#E02041"/> 
