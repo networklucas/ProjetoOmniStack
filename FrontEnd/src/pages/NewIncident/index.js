@@ -31,7 +31,7 @@ async function handleNewincident(e){
        history.push('/profile');
         
     } catch (error) {
-        alert('Erro O Cadastrar caso, tente novamente');
+        alert('Erro ao Cadastrar caso, tente novamente');
     }
 }
 

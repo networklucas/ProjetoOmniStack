@@ -52,7 +52,7 @@ import api from '../../services/api';
              <section>
                 <img src={logoImag} alt ="Be the Hero"/>
                 <h1>Cadastro </h1>
-                <p>Faça seu cadastro em nossa Plataforma para ser mais feliz</p>
+                <p>Faça seu cadastro em nossa Plataforma e encontre algum caso que precise de sua ajuda</p>
 
                 <Link className="back-link"to="/">
                          <FiArrowLeft size={16} color="#E02041"/>
