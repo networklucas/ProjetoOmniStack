@@ -41,7 +41,7 @@ async function handleNewincident(e){
             <section>
                <img src={logoImg} alt ="Be the Hero"/>
                <h1>Cadastrar novo caso</h1>
-               <p>Descreva o caso detalhadamente para encontrar alguem</p>
+               <p>Descreva o caso no qual precise de ajuda e encontre alguem para ajudar. </p>
                <Link className="back-link" to="/profile">
                <FiArrowDownLeft size={16} color="#E02041"/>
                Voltar para home

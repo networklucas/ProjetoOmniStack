@@ -29,6 +29,8 @@ import api from '../../services/api';
         };
 
         
+    
+
         try{
         const response = await api.post('/ongs',data);
 
@@ -52,7 +54,7 @@ import api from '../../services/api';
              <section>
                 <img src={logoImag} alt ="Be the Hero"/>
                 <h1>Cadastro </h1>
-                <p>Faça seu cadastro em nossa Plataforma e encontre algum caso que precise de sua ajuda</p>
+                <p>Faça o cadastro em nossa plataforma e publique seus casos em que precise de uma ajudinha.</p>
 
                 <Link className="back-link"to="/">
                          <FiArrowLeft size={16} color="#E02041"/>
